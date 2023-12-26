@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Listing;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//All Listings
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'heading' => 'Latest Listings',
+        'listings' => Listing::all()
+    ]);
 });
+
+
+//Single Listing
+Route::get('/listing/{id}', function ($id) {
+    return view('listing', [
+        'heading' => 'Latest Listings',
+        'listing' => Listing::find($id)
+    ]);
+});
+
+
+// Route::get('/hello', function (){
+//     return response("hello world", 200)
+//         ->header('Content-Type', 'text/plain');
+// });
+
+
+// Route::get('posts/{id}', function ($id) {
+//     //dd => die, dump
+//     //ddd => die, dump, debug
+//     // ddd($id);
+//     return response('Post ' .$id);
+// })->where('id', '[0-9]+');
+
+
+// Route::get('/search', function (Request $request) {
+//     return $request->name . ' ' . $request->age;
+// });
