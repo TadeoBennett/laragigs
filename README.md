@@ -1,5 +1,4 @@
-This Project was built using 
-<p align="center"><a href="https://laravel.com" target="_blank">Laravel</a></p>
+This Project was built using <a href="https://laravel.com" target="_blank">Laravel</a>
 
 ## About Laravel
 

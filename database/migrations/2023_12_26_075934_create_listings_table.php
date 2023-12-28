@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('email');
             $table->string('website');
-            $table->string('description');
+            $table->string('description', 256);
             $table->timestamps();
         });
     }

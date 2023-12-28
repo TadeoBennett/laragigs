@@ -1,4 +1,11 @@
-<h1>{{ $heading }}</h1>
+{{-- to say that it will be used in the layout --}}
+@extends('layout'); 
+
+
+{{-- wrapping this section and calling it 'content'.Its to be referenced in the layout.blade.php  --}}
+@section('content') 
+
+<div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
 
 {{-- Reasearch blade directives --}}
 
@@ -7,6 +14,8 @@
 @endif --}}
 
 @unless (count($listings) == 0)
+
+
     @forEach($listings as $listing)
         <h2><a href="/listing/{{$listing['id']}}">{{ $listing['title'] }}</a> </h2>
         <p>{{ $listing['description'] }}</p>
@@ -16,3 +25,8 @@
 @endunless
 
 
+
+</div>
+
+
+@endsection
